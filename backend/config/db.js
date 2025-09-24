@@ -1,16 +1,22 @@
-const mongoose = require("mongoose");
+const admin = require("firebase-admin");
+const path = require("path");
 
-const connectDB = async () => {
+const initializeFirebase = () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
+    const serviceAccount = require(path.resolve(process.env.GOOGLE_APPLICATION_CREDENTIALS));
+    
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      projectId: "personalizedadvisorysystem",
+      storageBucket: "personalizedadvisorysystem.firebasestorage.app"
     });
-    console.log("✅ MongoDB Connected");
+
+    console.log("Firebase Connected");
+    return admin.firestore();
   } catch (err) {
-    console.error("❌ MongoDB connection error:", err.message);
-    process.exit(1); // Exit process if DB connection fails
+    console.error("Firebase connection error:", err.message);
+    process.exit(1);
   }
 };
 
-module.exports = connectDB;
+module.exports = initializeFirebase;

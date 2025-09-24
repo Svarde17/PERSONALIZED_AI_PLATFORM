@@ -1,0 +1,316 @@
+{
+  "schemes": [
+    {
+      "id": "pm-kisan",
+      "name": "PM-KISAN",
+      "fullName": "Pradhan Mantri Kisan Samman Nidhi",
+      "description": "Income support scheme providing ₹6000 per year to small and marginal farmers",
+      "benefit": "₹6000 per year in 3 installments",
+      "eligibility": {
+        "landHolding": "up to 2 hectares",
+        "farmerType": ["small", "marginal"],
+        "states": "all",
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account"],
+      "applyUrl": "https://pmkisan.gov.in",
+      "status": "active",
+      "ministry": "Ministry of Agriculture & Farmers Welfare",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "fasal-bima",
+      "name": "Fasal Bima Yojana",
+      "fullName": "Pradhan Mantri Fasal Bima Yojana",
+      "description": "Crop insurance scheme to protect farmers against crop loss",
+      "benefit": "Insurance coverage up to ₹2 lakh per hectare",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": "all",
+        "crops": ["wheat", "rice", "cotton", "sugarcane", "oilseeds"],
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "Sowing Certificate"],
+      "applyUrl": "https://pmfby.gov.in",
+      "status": "active",
+      "ministry": "Ministry of Agriculture & Farmers Welfare",
+      "category": "insurance",
+      "priority": "high"
+    },
+    {
+      "id": "soil-health-card",
+      "name": "Soil Health Card",
+      "fullName": "Soil Health Card Scheme",
+      "description": "Free soil testing and nutrient management recommendations",
+      "benefit": "Free soil testing worth ₹500-1000",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": "all",
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records"],
+      "applyUrl": "https://soilhealth.dac.gov.in",
+      "status": "active",
+      "ministry": "Ministry of Agriculture & Farmers Welfare",
+      "category": "advisory",
+      "priority": "medium"
+    },
+    {
+      "id": "kisan-credit-card",
+      "name": "Kisan Credit Card",
+      "fullName": "Kisan Credit Card Scheme",
+      "description": "Credit facility for farmers at subsidized interest rates",
+      "benefit": "Credit up to ₹3 lakh at 4% interest",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": "all",
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "Income Certificate"],
+      "applyUrl": "https://www.nabard.org/kcc",
+      "status": "active",
+      "ministry": "Ministry of Agriculture & Farmers Welfare",
+      "category": "credit",
+      "priority": "high"
+    },
+    {
+      "id": "pm-kusum",
+      "name": "PM-KUSUM",
+      "fullName": "Pradhan Mantri Kisan Urja Suraksha evam Utthaan Mahabhiyan",
+      "description": "Solar power scheme for farmers",
+      "benefit": "90% subsidy on solar pumps and panels",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": "all",
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Electricity Connection"],
+      "applyUrl": "https://pmkusum.mnre.gov.in",
+      "status": "active",
+      "ministry": "Ministry of New and Renewable Energy",
+      "category": "energy",
+      "priority": "medium"
+    },
+    {
+      "id": "maharashtra-shetkari-sanman",
+      "name": "Shetkari Sanman Yojana",
+      "fullName": "Maharashtra Shetkari Sanman Yojana",
+      "description": "State scheme for Maharashtra farmers",
+      "benefit": "₹6000 per year additional support",
+      "eligibility": {
+        "landHolding": "up to 5 acres",
+        "farmerType": ["small", "marginal"],
+        "states": ["maharashtra"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Domicile Certificate"],
+      "applyUrl": "https://mahadbt.maharashtra.gov.in",
+      "status": "active",
+      "ministry": "Government of Maharashtra",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "punjab-crop-diversification",
+      "name": "Crop Diversification Scheme",
+      "fullName": "Punjab Crop Diversification Scheme",
+      "description": "Incentive for shifting from paddy to alternative crops",
+      "benefit": "₹17500 per hectare for crop diversification",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": ["punjab"],
+        "crops": ["maize", "cotton", "sugarcane", "vegetables"],
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Crop Sowing Certificate"],
+      "applyUrl": "https://punjab.gov.in/agriculture",
+      "status": "active",
+      "ministry": "Government of Punjab",
+      "category": "diversification",
+      "priority": "medium"
+    },
+    {
+      "id": "karnataka-raitha-bandhu",
+      "name": "Raitha Bandhu",
+      "fullName": "Karnataka Raitha Bandhu Scheme",
+      "description": "Investment support for crop cultivation in Karnataka",
+      "benefit": "₹10000 per hectare per season",
+      "eligibility": {
+        "landHolding": "up to 10 acres",
+        "farmerType": ["small", "marginal"],
+        "states": ["karnataka"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "Domicile Certificate"],
+      "applyUrl": "https://raitabandhu.karnataka.gov.in",
+      "status": "active",
+      "ministry": "Government of Karnataka",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "telangana-rythu-bandhu",
+      "name": "Rythu Bandhu",
+      "fullName": "Telangana Rythu Bandhu Scheme",
+      "description": "Investment support for farmers in Telangana",
+      "benefit": "₹10000 per acre per season",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": ["telangana"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account"],
+      "applyUrl": "https://webland.telangana.gov.in",
+      "status": "active",
+      "ministry": "Government of Telangana",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "odisha-kalia",
+      "name": "KALIA Scheme",
+      "fullName": "Krushak Assistance for Livelihood and Income Augmentation",
+      "description": "Comprehensive support for farmers and landless agricultural laborers",
+      "benefit": "₹25000 over 5 seasons for cultivation support",
+      "eligibility": {
+        "landHolding": "up to 2 hectares",
+        "farmerType": ["small", "marginal"],
+        "states": ["odisha"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "Caste Certificate"],
+      "applyUrl": "https://kalia.odisha.gov.in",
+      "status": "active",
+      "ministry": "Government of Odisha",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "west-bengal-krishak-bandhu",
+      "name": "Krishak Bandhu",
+      "fullName": "West Bengal Krishak Bandhu Scheme",
+      "description": "Financial assistance and insurance for farmers",
+      "benefit": "₹5000 per acre per year + ₹2 lakh life insurance",
+      "eligibility": {
+        "landHolding": "up to 2.5 acres",
+        "farmerType": ["small", "marginal"],
+        "states": ["west bengal"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "Age Proof"],
+      "applyUrl": "https://wb.gov.in/krishakbandhu",
+      "status": "active",
+      "ministry": "Government of West Bengal",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "rajasthan-mukhyamantri-kisan-mitra",
+      "name": "Mukhyamantri Kisan Mitra Urja Yojana",
+      "fullName": "Rajasthan Mukhyamantri Kisan Mitra Urja Yojana",
+      "description": "Electricity bill subsidy for farmers",
+      "benefit": "₹12000 per year electricity subsidy",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": ["rajasthan"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Electricity Connection", "Land Records"],
+      "applyUrl": "https://rajasthan.gov.in/agriculture",
+      "status": "active",
+      "ministry": "Government of Rajasthan",
+      "category": "energy",
+      "priority": "medium"
+    },
+    {
+      "id": "haryana-mera-pani-meri-virasat",
+      "name": "Mera Pani Meri Virasat",
+      "fullName": "Haryana Mera Pani Meri Virasat Scheme",
+      "description": "Incentive for crop diversification from paddy",
+      "benefit": "₹7000 per acre for shifting from paddy",
+      "eligibility": {
+        "landHolding": "any",
+        "farmerType": ["all"],
+        "states": ["haryana"],
+        "crops": ["maize", "cotton", "vegetables", "pulses"],
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Crop Certificate"],
+      "applyUrl": "https://haryana.gov.in/agriculture",
+      "status": "active",
+      "ministry": "Government of Haryana",
+      "category": "diversification",
+      "priority": "medium"
+    },
+    {
+      "id": "uttar-pradesh-kisan-uday",
+      "name": "Kisan Uday Yojana",
+      "fullName": "Uttar Pradesh Kisan Uday Yojana",
+      "description": "Comprehensive farmer welfare scheme",
+      "benefit": "₹25000 per hectare support + subsidies",
+      "eligibility": {
+        "landHolding": "up to 2 hectares",
+        "farmerType": ["small", "marginal"],
+        "states": ["uttar pradesh"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "Income Certificate"],
+      "applyUrl": "https://up.gov.in/agriculture",
+      "status": "active",
+      "ministry": "Government of Uttar Pradesh",
+      "category": "income_support",
+      "priority": "high"
+    },
+    {
+      "id": "madhya-pradesh-mukhyamantri-kisan-kalyan",
+      "name": "Mukhyamantri Kisan Kalyan Yojana",
+      "fullName": "Madhya Pradesh Mukhyamantri Kisan Kalyan Yojana",
+      "description": "Additional income support for farmers",
+      "benefit": "₹4000 per year additional to PM-KISAN",
+      "eligibility": {
+        "landHolding": "up to 2 hectares",
+        "farmerType": ["small", "marginal"],
+        "states": ["madhya pradesh"],
+        "crops": "all",
+        "aadhaarRequired": true
+      },
+      "documents": ["Aadhaar Card", "Land Records", "Bank Account", "PM-KISAN Registration"],
+      "applyUrl": "https://mp.gov.in/agriculture",
+      "status": "active",
+      "ministry": "Government of Madhya Pradesh",
+      "category": "income_support",
+      "priority": "high"
+    }
+  ],
+  "stateMapping": {
+    "maharashtra": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "maharashtra-shetkari-sanman"],
+    "punjab": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "punjab-crop-diversification"],
+    "karnataka": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "karnataka-raitha-bandhu"],
+    "telangana": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "telangana-rythu-bandhu"],
+    "odisha": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "odisha-kalia"],
+    "west bengal": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "west-bengal-krishak-bandhu"],
+    "rajasthan": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "rajasthan-mukhyamantri-kisan-mitra"],
+    "haryana": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "haryana-mera-pani-meri-virasat"],
+    "uttar pradesh": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "uttar-pradesh-kisan-uday"],
+    "madhya pradesh": ["pm-kisan", "fasal-bima", "soil-health-card", "kisan-credit-card", "pm-kusum", "madhya-pradesh-mukhyamantri-kisan-kalyan"]
+  }
+}

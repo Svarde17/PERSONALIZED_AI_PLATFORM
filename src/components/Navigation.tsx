@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
   Home, 
@@ -10,15 +10,24 @@ import {
   FileText, 
   Menu, 
   X,
-  Sprout
+  Sprout,
+  LogOut,
+  Cloud
 } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("farmer");
+    navigate("/login");
+  };
 
   const navItems = [
-    { icon: Home, label: "Dashboard", path: "/" },
+    { icon: Home, label: "Dashboard", path: "/dashboard" },
     { icon: MessageCircle, label: "AI Assistant", path: "/chat" },
+    { icon: Cloud, label: "Weather", path: "/weather" },
     { icon: Users, label: "Community", path: "/community" },
     { icon: Calendar, label: "Crop Calendar", path: "/calendar" },
     { icon: TrendingUp, label: "Market Prices", path: "/market" },
@@ -69,6 +78,15 @@ const Navigation = () => {
                   <span className="font-medium">{item.label}</span>
                 </NavLink>
               ))}
+              
+              <Button
+                variant="ghost"
+                onClick={() => { handleLogout(); setIsOpen(false); }}
+                className="w-full flex items-center gap-3 px-4 py-3 text-muted-foreground hover:bg-secondary hover:text-secondary-foreground"
+              >
+                <LogOut className="h-5 w-5" />
+                <span className="font-medium">Logout</span>
+              </Button>
             </nav>
           </div>
         </div>
@@ -104,6 +122,17 @@ const Navigation = () => {
             </NavLink>
           ))}
         </nav>
+        
+        <div className="p-4 border-t border-border">
+          <Button
+            variant="ghost"
+            onClick={handleLogout}
+            className="w-full flex items-center gap-3 px-4 py-3 text-muted-foreground hover:bg-secondary hover:text-secondary-foreground"
+          >
+            <LogOut className="h-5 w-5" />
+            <span className="font-medium">Logout</span>
+          </Button>
+        </div>
       </aside>
     </>
   );

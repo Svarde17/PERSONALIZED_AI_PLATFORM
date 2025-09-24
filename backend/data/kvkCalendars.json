@@ -1,0 +1,63 @@
+{
+  "wheat": {
+    "maharashtra": {
+      "rabi": [
+        { "week": 1, "task": "Land preparation", "details": "Deep ploughing, apply FYM 10 tons/acre", "priority": "high", "icon": "🚜", "hindi": "भूमि तैयारी", "marathi": "जमीन तयारी" },
+        { "week": 2, "task": "Seed sowing", "details": "Sow wheat seeds at 100kg/acre, line sowing preferred", "priority": "high", "icon": "🌱", "hindi": "बीज बुआई", "marathi": "बियाणे पेरणी" },
+        { "week": 3, "task": "Apply DAP fertilizer", "details": "Apply DAP 100kg/acre as basal dose", "priority": "medium", "icon": "🧪", "hindi": "डीएपी खाद डालें", "marathi": "डीएपी खत टाका" },
+        { "week": 4, "task": "First irrigation", "details": "Light irrigation 20-25 days after sowing", "priority": "high", "icon": "💧", "hindi": "पहली सिंचाई", "marathi": "पहिले पाणी" },
+        { "week": 6, "task": "Apply Urea", "details": "Top dress urea 50kg/acre", "priority": "medium", "icon": "🧪", "hindi": "यूरिया डालें", "marathi": "युरिया टाका" },
+        { "week": 8, "task": "Second irrigation", "details": "Crown root initiation stage irrigation", "priority": "high", "icon": "💧", "hindi": "दूसरी सिंचाई", "marathi": "दुसरे पाणी" },
+        { "week": 10, "task": "Weed control", "details": "Manual weeding or herbicide spray", "priority": "medium", "icon": "🌿", "hindi": "खरपतवार नियंत्रण", "marathi": "तण नियंत्रण" },
+        { "week": 12, "task": "Third irrigation", "details": "Tillering stage irrigation", "priority": "high", "icon": "💧", "hindi": "तीसरी सिंचाई", "marathi": "तिसरे पाणी" },
+        { "week": 14, "task": "Pest monitoring", "details": "Check for aphids, apply neem oil if needed", "priority": "low", "icon": "🐛", "hindi": "कीट निगरानी", "marathi": "किडे तपासणी" },
+        { "week": 16, "task": "Fourth irrigation", "details": "Jointing stage - critical irrigation", "priority": "high", "icon": "💧", "hindi": "चौथी सिंचाई", "marathi": "चौथे पाणी" },
+        { "week": 18, "task": "Fifth irrigation", "details": "Flowering stage irrigation", "priority": "high", "icon": "💧", "hindi": "पांचवी सिंचाई", "marathi": "पाचवे पाणी" },
+        { "week": 20, "task": "Final irrigation", "details": "Grain filling stage - last irrigation", "priority": "high", "icon": "💧", "hindi": "अंतिम सिंचाई", "marathi": "शेवटचे पाणी" },
+        { "week": 22, "task": "Harvest preparation", "details": "Check grain moisture, prepare tools", "priority": "high", "icon": "🌾", "hindi": "कटाई की तैयारी", "marathi": "कापणी तयारी" },
+        { "week": 24, "task": "Harvesting", "details": "Harvest when grain moisture is 20-22%", "priority": "high", "icon": "✂️", "hindi": "कटाई", "marathi": "कापणी" }
+      ]
+    },
+    "punjab": {
+      "rabi": [
+        { "week": 1, "task": "Land preparation", "details": "Prepare seedbed, apply FYM", "priority": "high", "icon": "🚜", "hindi": "भूमि तैयारी", "punjabi": "ਜ਼ਮੀਨ ਤਿਆਰੀ" },
+        { "week": 2, "task": "Seed sowing", "details": "Sow wheat with seed drill", "priority": "high", "icon": "🌱", "hindi": "बीज बुआई", "punjabi": "ਬੀਜ ਬਿਜਾਈ" }
+      ]
+    }
+  },
+  "rice": {
+    "maharashtra": {
+      "kharif": [
+        { "week": 1, "task": "Nursery preparation", "details": "Prepare nursery beds, soak seeds 24 hours", "priority": "high", "icon": "🌱", "hindi": "नर्सरी तैयारी", "marathi": "रोपवाटिका तयारी" },
+        { "week": 3, "task": "Land preparation", "details": "Puddle field, apply FYM 15 tons/acre", "priority": "high", "icon": "🚜", "hindi": "भूमि तैयारी", "marathi": "जमीन तयारी" },
+        { "week": 4, "task": "Transplanting", "details": "Transplant 25-30 day old seedlings", "priority": "high", "icon": "🌾", "hindi": "रोपाई", "marathi": "लागवड" },
+        { "week": 5, "task": "Apply fertilizer", "details": "Apply NPK 100:50:50 kg/acre", "priority": "medium", "icon": "🧪", "hindi": "खाद डालें", "marathi": "खत टाका" },
+        { "week": 7, "task": "First weeding", "details": "Manual weeding or herbicide", "priority": "medium", "icon": "🌿", "hindi": "पहली निराई", "marathi": "पहिली निंदणी" },
+        { "week": 9, "task": "Apply Urea", "details": "Top dress urea 25kg/acre", "priority": "medium", "icon": "🧪", "hindi": "यूरिया डालें", "marathi": "युरिया टाका" },
+        { "week": 11, "task": "Panicle initiation", "details": "Apply urea 20kg/acre, maintain water", "priority": "high", "icon": "🌾", "hindi": "बाली निकलना", "marathi": "कणीस येणे" },
+        { "week": 13, "task": "Flowering stage", "details": "Maintain continuous water supply", "priority": "high", "icon": "🌸", "hindi": "फूल आना", "marathi": "फुले येणे" },
+        { "week": 15, "task": "Grain filling", "details": "Reduce water, apply potash", "priority": "high", "icon": "🌾", "hindi": "दाना भरना", "marathi": "दाणे भरणे" },
+        { "week": 17, "task": "Pest control", "details": "Monitor brown plant hopper", "priority": "medium", "icon": "🐛", "hindi": "कीट नियंत्रण", "marathi": "किडे नियंत्रण" },
+        { "week": 19, "task": "Drain field", "details": "Drain water 10 days before harvest", "priority": "high", "icon": "🚰", "hindi": "पानी निकालें", "marathi": "पाणी काढा" },
+        { "week": 21, "task": "Harvesting", "details": "Harvest when 80% grains golden", "priority": "high", "icon": "✂️", "hindi": "कटाई", "marathi": "कापणी" }
+      ]
+    }
+  },
+  "tomato": {
+    "maharashtra": {
+      "rabi": [
+        { "week": 1, "task": "Seed sowing", "details": "Sow seeds in nursery beds", "priority": "high", "icon": "🌱", "hindi": "बीज बुआई", "marathi": "बियाणे पेरणी" },
+        { "week": 4, "task": "Transplanting", "details": "Transplant 4-5 week old seedlings", "priority": "high", "icon": "🍅", "hindi": "रोपाई", "marathi": "लागवड" },
+        { "week": 5, "task": "First irrigation", "details": "Light irrigation after transplanting", "priority": "high", "icon": "💧", "hindi": "पहली सिंचाई", "marathi": "पहिले पाणी" },
+        { "week": 6, "task": "Apply fertilizer", "details": "Apply NPK 19:19:19 @ 25kg/acre", "priority": "medium", "icon": "🧪", "hindi": "खाद डालें", "marathi": "खत टाका" },
+        { "week": 8, "task": "Staking", "details": "Provide support stakes", "priority": "medium", "icon": "🪵", "hindi": "सहारा देना", "marathi": "आधार देणे" },
+        { "week": 10, "task": "Pruning", "details": "Remove suckers and lower leaves", "priority": "low", "icon": "✂️", "hindi": "छंटाई", "marathi": "छाटणी" },
+        { "week": 12, "task": "Flowering stage", "details": "Apply calcium spray", "priority": "medium", "icon": "🌸", "hindi": "फूल आना", "marathi": "फुले येणे" },
+        { "week": 14, "task": "Fruit setting", "details": "Maintain moisture, mulching", "priority": "high", "icon": "🍅", "hindi": "फल लगना", "marathi": "फळे लागणे" },
+        { "week": 16, "task": "Pest monitoring", "details": "Check whitefly, use sticky traps", "priority": "medium", "icon": "🐛", "hindi": "कीट निगरानी", "marathi": "किडे तपासणी" },
+        { "week": 18, "task": "First harvest", "details": "Harvest mature fruits", "priority": "high", "icon": "🍅", "hindi": "पहली तुड़ाई", "marathi": "पहिली तोडणी" },
+        { "week": 20, "task": "Continuous harvest", "details": "Harvest every 3-4 days", "priority": "high", "icon": "🧺", "hindi": "निरंतर तुड़ाई", "marathi": "सतत तोडणी" }
+      ]
+    }
+  }
+}

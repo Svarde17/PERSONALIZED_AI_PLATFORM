@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,38 +29,60 @@ const Chat = () => {
     {
       id: '1',
       type: 'ai',
-      content: 'नमस्ते! मैं आपका AI कृषि सहायक हूं। आप मुझसे खेती संबंधी कोई भी प्रश्न पूछ सकते हैं।',
+      content: 'Hello! I am your AI farming assistant. Ask me anything about your crops.',
       timestamp: new Date(),
-      explanation: 'I\'m here to help with all your farming queries in your preferred language.'
+      explanation: "I'm here to provide personalized farming advice based on your city, state, and crop."
     }
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [farmer, setFarmer] = useState<any>(null);
 
-  const sendMessage = () => {
-    if (!inputMessage.trim()) return;
+  useEffect(() => {
+    const farmerData = sessionStorage.getItem("farmer");
+    if (farmerData) {
+      try {
+        setFarmer(JSON.parse(farmerData));
+      } catch (e) {
+        console.error('Error parsing farmer data:', e);
+      }
+    }
+  }, []);
+
+  const sendMessage = async () => {
+    if (!inputMessage.trim() || !farmer) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
-      type: 'user',
+      type: "user",
       content: inputMessage,
       timestamp: new Date()
     };
 
     setMessages(prev => [...prev, userMessage]);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const aiResponse: Message = {
+    try {
+      const res = await fetch("http://localhost:5000/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          farmerId: farmer.id,
+          question: inputMessage
+        })
+      });
+      const data = await res.json();
+      const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        type: 'ai',
-        content: 'मैं आपकी समस्या को समझ गया हूं। आपके गेहूं के पत्ते पीले होने का कारण नाइट्रोजन की कमी हो सकती है। मैं सुझाव देता हूं कि आप यूरिया खाद का उपयोग करें।',
-        timestamp: new Date(),
-        explanation: 'Yellowing wheat leaves typically indicate nitrogen deficiency. Recommended solution: Apply urea fertilizer at 50kg per acre with proper irrigation.'
+        type: "ai",
+        content: data.answer,
+        timestamp: new Date()
       };
-      setMessages(prev => [...prev, aiResponse]);
-    }, 1500);
+      setMessages(prev => [...prev, aiMessage]);
+    } catch (err) {
+      console.error(err);
+      alert("Something went wrong while getting AI response");
+    }
 
     setInputMessage('');
   };
@@ -69,30 +91,49 @@ const Chat = () => {
     fileInputRef.current?.click();
   };
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-    if (file) {
+    if (file && farmer) {
       const userMessage: Message = {
         id: Date.now().toString(),
         type: 'user',
-        content: 'Uploaded an image for crop disease detection',
+        content: `Uploaded image: ${file.name}`,
         timestamp: new Date(),
         hasImage: true
       };
 
       setMessages(prev => [...prev, userMessage]);
 
-      // Simulate AI image analysis
-      setTimeout(() => {
+      try {
+        const formData = new FormData();
+        formData.append('image', file);
+        formData.append('question', 'Analyze this crop image and provide farming advice');
+
+        const response = await fetch('http://localhost:5000/api/image/analyze', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+        
         const aiResponse: Message = {
           id: (Date.now() + 1).toString(),
           type: 'ai',
-          content: 'मैंने आपकी तस्वीर का विश्लेषण किया है। यह लीफ ब्लाइट रोग लग रहा है। तुरंत कॉपर सल्फेट का छिड़काव करें।',
-          timestamp: new Date(),
-          explanation: 'Image analysis shows signs of leaf blight disease. Immediate treatment required with copper sulfate spray (2g per liter of water). Apply in evening hours.'
+          content: data.answer || 'Unable to analyze image',
+          timestamp: new Date()
         };
+        
         setMessages(prev => [...prev, aiResponse]);
-      }, 2000);
+      } catch (error) {
+        console.error('Image analysis failed:', error);
+        const errorResponse: Message = {
+          id: (Date.now() + 1).toString(),
+          type: 'ai',
+          content: 'Sorry, I could not analyze the image. Please try again or describe your crop issue in text.',
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, errorResponse]);
+      }
     }
   };
 
@@ -106,7 +147,7 @@ const Chat = () => {
               <Bot className="h-6 w-6 text-primary" />
               AI Krishi Assistant
             </h1>
-            <p className="text-muted-foreground">Ask questions in Hindi, English, or upload crop images</p>
+            <p className="text-muted-foreground">Ask questions in English or upload crop images</p>
           </div>
         </div>
 
@@ -190,7 +231,7 @@ const Chat = () => {
               <Textarea
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
-                placeholder="अपना प्रश्न लिखें... / Type your farming question..."
+                placeholder="Type your farming question or upload an image for analysis..."
                 className="flex-1 min-h-[44px] max-h-32 resize-none"
                 onKeyPress={(e) => {
                   if (e.key === 'Enter' && !e.shiftKey) {

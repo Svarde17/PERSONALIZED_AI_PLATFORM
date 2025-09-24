@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Farmer Advisory System Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Farmer-friendly color palette - earthy & natural tones */
+    --background: 35 20% 98%;
+    --foreground: 25 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 15%;
+
+    /* Rich agricultural green as primary */
+    --primary: 120 60% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 120 45% 65%;
+    --primary-dark: 120 70% 25%;
+
+    /* Earthy secondary colors */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 25 20% 25%;
+    --earth-tone: 25 35% 65%;
+    --earth-tone-foreground: 0 0% 98%;
+
+    /* Fresh accent colors */
+    --accent: 85 60% 55%;
+    --accent-foreground: 0 0% 98%;
+    --accent-light: 85 45% 75%;
+
+    --muted: 35 20% 96%;
+    --muted-foreground: 25 15% 55%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --warning: 45 90% 60%;
+    --warning-foreground: 25 20% 15%;
+
+    --success: 120 60% 45%;
+    --success-foreground: 0 0% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 120 60% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients for farmer theme */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --gradient-earth: linear-gradient(135deg, hsl(var(--earth-tone)) 0%, hsl(var(--accent)) 100%);
+    --gradient-fresh: linear-gradient(135deg, hsl(var(--accent-light)) 0%, hsl(var(--accent)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)) 0%, hsl(var(--primary)) 50%, hsl(var(--accent)) 100%);
+    
+    /* Shadows with natural feel */
+    --shadow-soft: 0 2px 8px hsla(var(--primary), 0.08);
+    --shadow-medium: 0 4px 16px hsla(var(--primary), 0.12);
+    --shadow-strong: 0 8px 32px hsla(var(--primary), 0.16);
+    --shadow-glow: 0 0 0 1px hsla(var(--primary), 0.05), 0 2px 8px hsla(var(--primary), 0.1);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .earth-gradient {
+    background: var(--gradient-earth);
+  }
+  
+  .fresh-gradient {
+    background: var(--gradient-fresh);
+  }
+  
+  /* Card enhancements */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  /* Status indicators */
+  .status-healthy {
+    @apply bg-success text-success-foreground;
+  }
+  
+  .status-warning {
+    @apply bg-warning text-warning-foreground;
+  }
+  
+  .status-critical {
+    @apply bg-destructive text-destructive-foreground;
+  }
+  
+  /* Farmer-friendly animations */
+  .grow-on-hover {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .slide-up {
+    @apply animate-[slideUp_0.5s_ease-out];
+  }
+  
+  /* Chat bubble styles */
+  .chat-farmer {
+    @apply bg-primary text-primary-foreground rounded-3xl rounded-br-lg;
+  }
+  
+  .chat-ai {
+    @apply bg-secondary text-secondary-foreground rounded-3xl rounded-bl-lg;
+  }
+}
+
+@layer utilities {
+  /* Custom font families */
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Gradient text */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframe animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

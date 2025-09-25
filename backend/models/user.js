@@ -41,12 +41,12 @@ class Farmer {
   }
 
   static async findOne(query) {
-    const db = admin.firestore();
-    const snapshot = await db.collection('farmers').where('email', '==', query.email).get();
-    if (snapshot.empty) return null;
-    const doc = snapshot.docs[0];
-    return { id: doc.id, ...doc.data() };
-  }
+  const db = admin.firestore();
+  const snapshot = await db.collection('farmers').where('aadhar', '==', query.aadhar).get();
+  if (snapshot.empty) return null;
+  const doc = snapshot.docs[0];
+  return { id: doc.id, ...doc.data() };
+}
 
   static async find() {
     const db = admin.firestore();
